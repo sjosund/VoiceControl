@@ -4,6 +4,8 @@ from subprocess import Popen, call
 import json
 import wit
 
+from access_token import ACCESS_TOKEN
+
 playlists = {
     'full-day_list': 'spotify:user:1146628823:playlist:6TSA3CY3vwcWrZSvG8Zgwi',
     'jazz': 'spotify:user:1146628823:playlist:1YEoE6AslVyAA6CTXv20zn'
@@ -27,7 +29,7 @@ def start_vlc():
 
 
 def query():
-    access_token = 'XWST5FGSVQLMKGX6BHN7MBRXY3KCLGIH'
+    access_token = ACCESS_TOKEN
     wit.init()
     response = json.loads(
         wit.voice_query_auto(access_token)
